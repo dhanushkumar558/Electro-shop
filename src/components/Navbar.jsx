@@ -32,15 +32,14 @@ function Navbar() {
       }`}
     >
       <Container fluid>
-        <Link
-          to="/"
-          className={`navbar-brand fw-bold fs-4 text-gradient ${
-            darkMode ? 'text-white' : ''
-          }`}
-          onClick={handleCollapse}
-        >
-          ⚡ ElectroShop
-        </Link>
+        <a
+  href="/"
+  className={`navbar-brand fw-bold fs-4 text-gradient ${darkMode ? 'text-white' : ''}`}
+  onClick={handleCollapse}
+>
+  ⚡ ElectroShop
+</a>
+
 
         <BSNavbar.Toggle aria-controls="main-navbar" />
 
