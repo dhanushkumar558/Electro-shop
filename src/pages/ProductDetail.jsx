@@ -14,9 +14,14 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [successMessage, setSuccessMessage] = useState('');
   const [showAllReviews, setShowAllReviews] = useState(false);
+  const [wishlist, setWishlist] = useState(() => {
+    const saved = localStorage.getItem('wishlist');
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const product = products.find((p) => p.id === id);
   const alreadyInCart = cartItems.some((item) => item.id === id);
+  const inWishlist = wishlist.includes(id);
 
   useEffect(() => {
     if (successMessage) {
@@ -24,6 +29,10 @@ const ProductDetail = () => {
       return () => clearTimeout(timer);
     }
   }, [successMessage]);
+
+  useEffect(() => {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  }, [wishlist]);
 
   if (!product) {
     return (
@@ -40,6 +49,12 @@ const ProductDetail = () => {
       addToCart({ ...product });
       setSuccessMessage('✅ Added to Cart!');
     }
+  };
+
+  const toggleWishlist = () => {
+    setWishlist((prev) =>
+      prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id]
+    );
   };
 
   const displayedReviews = showAllReviews
@@ -81,11 +96,43 @@ const ProductDetail = () => {
       <div className="row align-items-center mb-5">
         {/* 🖼️ Image Preview */}
         <motion.div
-          className="col-md-6 mb-4 mb-md-0"
+          className="col-md-6 mb-4 mb-md-0 position-relative"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
+          {/* ❤️ Wishlist on image */}
+          <button
+  onClick={toggleWishlist}
+  className="wishlist-btn position-absolute top-0 end-0 m-3 z-3"
+  title={inWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
+>
+  {inWishlist ? '❤️' : '🤍'}
+</button>
+
+<style>
+{`
+  .wishlist-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .wishlist-btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .wishlist-btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+`}
+</style>
+
+
           <AnimatePresence mode="wait">
             <motion.img
               key={selectedImage}
@@ -116,7 +163,7 @@ const ProductDetail = () => {
           </div>
         </motion.div>
 
-        {/* 📄 Product Info */}
+        {/* 📋 Product Info */}
         <motion.div
           className="col-md-6"
           initial={{ x: 50, opacity: 0 }}
@@ -124,6 +171,7 @@ const ProductDetail = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="fw-bold mb-3">{product.name}</h2>
+
           <p className={`fs-5 ${darkMode ? 'text-light' : 'text-muted'}`}>{product.description}</p>
           <p className="h4 fw-bold text-success mt-4">{product.price}</p>
 
@@ -182,7 +230,7 @@ const ProductDetail = () => {
         )}
       </motion.div>
 
-      {/* 🛍️ Suggested Products */}
+      {/* 🔁 Suggested Products */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

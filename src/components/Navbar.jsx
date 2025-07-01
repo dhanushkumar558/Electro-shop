@@ -90,6 +90,8 @@ function Navbar() {
                 </Badge>
               )}
             </Link>
+            
+            
             <Link
   to="/orders"
   className={`nav-link ${location.pathname === '/orders' ? 'fw-semibold text-primary' : darkMode ? 'text-light' : ''}`}
@@ -100,7 +102,7 @@ function Navbar() {
           </Nav>
 
           <Nav>
-            <NavDropdown
+            <NavDropdown 
               title="⚙ Settings"
               align="end"
               className={darkMode ? 'text-white' : ''}

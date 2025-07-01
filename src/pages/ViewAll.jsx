@@ -46,7 +46,7 @@ const ViewAll = () => {
       <div className="row g-4">
         {filtered.length > 0 ? (
           filtered.map((product) => (
-            <div key={product.id} className="col-12 col-sm-6 col-lg-3">
+            <div key={product.id} className="col-6 col-sm-6 col-lg-3">
               <ProductCard product={product} />
             </div>
           ))
