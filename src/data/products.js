@@ -49,7 +49,7 @@ const products = [
       'https://m.media-amazon.com/images/I/61NibinwDpL._SX679_.jpg',
     ],
     price: '$199',
-    description: 'Breathe clean air with this HEPA-filter purifier that connects to your smart home.',
+    description: 'Breathe clean air with this purifier that connects to your smart home.',
     rating: 4.6,
     reviews: [
       { name: "Pooja", time: "2 days ago", comment: "Clean air in minutes!" },
@@ -60,14 +60,14 @@ const products = [
   {
     id: 'home-3',
     category: 'Home Electronics',
-    name: ' Air Purifier',
+    name: ' Hepa filter Air Purifier',
     images: [
       'https://m.media-amazon.com/images/I/71ipnrfS-1L._SL1500_.jpg',
       'https://m.media-amazon.com/images/I/81XVz57qC+L._SL1500_.jpg',
       'https://m.media-amazon.com/images/I/814xOimYSLL._SL1500_.jpg',
     ],
     price: '$199',
-    description: 'Breathe clean air with this HEPA-filter purifier that connects to your smart home.',
+    description: 'HEPA-filter purifier that coverts your toxic dust filled room into purified room.',
     rating: 4.6,
     reviews: [
       { name: "Pooja", time: "2 days ago", comment: "Clean air in minutes!" },
@@ -85,7 +85,7 @@ const products = [
       'https://m.media-amazon.com/images/I/71AzzRmo3LL._SL1500_.jpg',
     ],
     price: '$199',
-    description: 'Breathe clean air with this HEPA-filter purifier that connects to your smart home.',
+    description: 'Smart convinient Plug comfortable with large adapters',
     rating: 4.6,
     reviews: [
       { name: "Pooja", time: "2 days ago", comment: "Clean air in minutes!" },
@@ -101,9 +101,9 @@ const products = [
     category: 'Kitchen Electronics',
     name: 'Smart Blender Pro',
     images: [
-      'https://m.media-amazon.com/images/I/61k6U7+8LwL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71WwXbgE7kL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61S2H0eT0UL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/71sQJltolRL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81OUrlgmLnL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81sTmre71mL._SL1500_.jpg'
     ],
     price: '$89',
     description: 'Blend smoothies and soups effortlessly with pre-programmed settings and stainless blades.',
@@ -119,9 +119,9 @@ const products = [
     category: 'Kitchen Electronics',
     name: 'Touch Control Induction Cooktop',
     images: [
-      'https://m.media-amazon.com/images/I/61lN2LjRMgL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71B2I6FhCbL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61vbi0cAXUL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/51iI0N5UKfS._SL1000_.jpg',
+      'https://m.media-amazon.com/images/I/61psrtfhT+S._SL1000_.jpg',
+      'https://m.media-amazon.com/images/I/51INjX-LNrS._SL1000_.jpg'
     ],
     price: '$119',
     description: 'Energy-efficient cooking with 8 power levels and a stylish glass panel.',
@@ -137,9 +137,9 @@ const products = [
     category: 'Kitchen Electronics',
     name: 'Automatic Electric Kettle',
     images: [
-      'https://m.media-amazon.com/images/I/61nTspE5vTL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/51z1vnQaFVL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61ozRgQ6sGL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/61pTOr+MotL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/516aFO2YwmL._SL1000_.jpg',
+      'https://m.media-amazon.com/images/I/51qYatz6N1L._SX679_.jpg'
     ],
     price: '$45',
     description: 'Boil water in under 2 minutes with auto shutoff and boil-dry protection.',
@@ -155,9 +155,9 @@ const products = [
     category: 'Kitchen Electronics',
     name: 'Multi-Function Rice Cooker',
     images: [
-      'https://m.media-amazon.com/images/I/71TyZNp+8XL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/81ZRo+M6E9L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71lGv5NdJQL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/717S1k+3ulL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81gmlt2AHGL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/8132IHxFmDL._SL1500_.jpg'
     ],
     price: '$69',
     description: 'Cook rice, steam veggies, and prepare soups with one-touch operation.',
@@ -173,9 +173,9 @@ const products = [
     category: 'Kitchen Electronics',
     name: 'Smart Microwave Oven',
     images: [
-      'https://m.media-amazon.com/images/I/61pFS9S7U5L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61KnO3rVrJL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71MCmUnGfDL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/71X4oAhYufL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71i+y28Vk3L._SX679_.jpg',
+      'https://m.media-amazon.com/images/I/71cwnCfQq8L._SL1500_.jpg'
     ],
     price: '$149',
     description: 'Reheat, bake, and defrost with smart touch presets and voice assistant control.',
@@ -194,9 +194,9 @@ const products = [
     category: 'Gardening',
     name: 'Cordless Grass Trimmer',
     images: [
-      'https://m.media-amazon.com/images/I/71nTTRqNdUL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/81tCAmfMz1L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61Ay9vowS4L._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/71Yh7d11P7L._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/712Jw0uNyaL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81uX-88vSAL._SL1500_.jpg'
     ],
     price: '$89',
     description: 'Trim edges and weeds without cords — lightweight and powerful battery included.',
@@ -212,9 +212,9 @@ const products = [
     category: 'Gardening',
     name: 'Smart Watering System',
     images: [
-      'https://m.media-amazon.com/images/I/61fd6JojQ-L._SL1000_.jpg',
-      'https://m.media-amazon.com/images/I/71FOWqmwA3L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71PZLhvMcRL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/71WiglX8MyL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71pp-rXgGzL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81MD14TAyAL._SL1500_.jpg'
     ],
     price: '$129',
     description: 'Automated timer, rain sensor, and app-controlled watering system.',
@@ -230,9 +230,9 @@ const products = [
     category: 'Gardening',
     name: 'Ergonomic Gardening Tool Kit',
     images: [
-      'https://m.media-amazon.com/images/I/71RXumjVuGL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/81cRy5cDJML._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/81kFnM8kbGL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/61AB4TvHDUS._SL1474_.jpg',
+      'https://m.media-amazon.com/images/I/71XrsdjZscS._SL1001_.jpg',
+      'https://m.media-amazon.com/images/I/618ydJmQtiS._SL1000_.jpg'
     ],
     price: '$39',
     description: 'Essential tools with anti-rust stainless steel and anti-slip grip.',
@@ -248,9 +248,9 @@ const products = [
     category: 'Gardening',
     name: 'Electric Lawn Mower',
     images: [
-      'https://m.media-amazon.com/images/I/61pEXkNS2jL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61NfOqq6Y3L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71t5B3q+jgL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/61omAwE3MvL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/815WpE0AwJL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71NtPzz-RyL._SL1500_.jpg'
     ],
     price: '$189',
     description: 'Powerful electric mower with adjustable cutting height and large grass catcher.',
@@ -266,9 +266,9 @@ const products = [
     category: 'Gardening',
     name: 'Vertical Wall Planter',
     images: [
-      'https://m.media-amazon.com/images/I/81Z69zS4T9L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/81RQksN1VjL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/91rKnGkeDLL._SL1500_.jpg'
+      'https://m.media-amazon.com/images/I/71p-oHsm3GL._SL1280_.jpg',
+      'https://m.media-amazon.com/images/I/71oe2AHq5cL._SL1280_.jpg',
+      'https://m.media-amazon.com/images/I/718Zg+WxvlL._SL1280_.jpg'
     ],
     price: '$29',
     description: 'Create a stunning vertical garden with durable hanging wall planters.',
@@ -287,9 +287,9 @@ const products = [
     category: 'Personal Care',
     name: 'Smart Hair Dryer',
     images: [
-      'https://m.media-amazon.com/images/I/61qWJz2YvVL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61qLz0UjIPL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71n8KnFz5mL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81gVrVMBGVL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81UsH-bldlL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81NSr-WbTbL._SL1500_.jpg',
     ],
     price: '$59',
     description: 'Ionic drying with temperature control and foldable design.',
@@ -305,9 +305,9 @@ const products = [
     category: 'Personal Care',
     name: 'Electric Toothbrush',
     images: [
-      'https://m.media-amazon.com/images/I/61gPCgVYe9L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61wtdvEGoBL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61VXWvGxlFL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/61S1WhZ5DrL._SL1300_.jpg',
+      'https://m.media-amazon.com/images/I/61VG-T3QNrL._SL1300_.jpg',
+      'https://m.media-amazon.com/images/I/61LcU9FapNL._SL1300_.jpg',
     ],
     price: '$39',
     description: 'Advanced sonic tech with 3 modes and long battery life.',
@@ -323,9 +323,9 @@ const products = [
     category: 'Personal Care',
     name: 'Facial Steamer Pro',
     images: [
-      'https://m.media-amazon.com/images/I/61bFZkfdpvL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61+IsJAmF5L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61E0qYuKbEL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/61SDLg0EOnL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71lLuDIbRSL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71spFushr+L._SL1500_.jpg',
     ],
     price: '$79',
     description: 'Deep cleansing, hydration, and spa-like glow at home.',
@@ -341,9 +341,9 @@ const products = [
     category: 'Personal Care',
     name: 'Rechargeable Beard Trimmer',
     images: [
-      'https://m.media-amazon.com/images/I/61duF+2wU3L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61WJjtd-3pL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71h7ssBf52L._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/61YNB13-F9L._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71HRxBzyuQL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71w8O5JTOLL._SL1500_.jpg',
     ],
     price: '$49',
     description: 'Precision trimming with long-lasting battery and multiple comb settings.',
@@ -359,9 +359,9 @@ const products = [
     category: 'Personal Care',
     name: 'Heated Eye Massager',
     images: [
-      'https://m.media-amazon.com/images/I/71I0rsb+vjL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61kS49EtzrL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71VJS7P0j7L._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/31fQQViJz4L.jpg',
+      'https://m.media-amazon.com/images/I/61F-Qb8dW2L._SL1080_.jpg',
+      'https://m.media-amazon.com/images/I/61uoNhBpI7L._SL1080_.jpg',
     ],
     price: '$69',
     description: 'Relieve eye strain with heat and vibration massage — perfect after screen time.',
@@ -381,9 +381,9 @@ const products = [
     category: 'Automobiles',
     name: 'Car Dash Cam Pro',
     images: [
-      'https://m.media-amazon.com/images/I/71R2Bl1JzGL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/81DTY+4hzTL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/81RCr+QoATL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/61C+m93WT4L._SL1080_.jpg',
+      'https://m.media-amazon.com/images/I/61AmqhCS60L._SL1080_.jpg',
+      'https://m.media-amazon.com/images/I/61TlFSpyIfL._SL1080_.jpg',
     ],
     price: '$149',
     description: 'Full HD recording with night vision and parking surveillance.',
@@ -399,9 +399,9 @@ const products = [
     category: 'Automobiles',
     name: 'Car Air Purifier Mini',
     images: [
-      'https://m.media-amazon.com/images/I/61+GO4aO2uL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61L1JHV5b3L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61mg8u7mIjL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/61jwM+adjXL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/61rIPbMFznL._SL1080_.jpg',
+      'https://m.media-amazon.com/images/I/71udIIRFOKL._SL1500_.jpg',
     ],
     price: '$59',
     description: 'Removes allergens, smoke, and odors. USB powered.',
@@ -417,9 +417,9 @@ const products = [
     category: 'Automobiles',
     name: 'Wireless Tire Inflator',
     images: [
-      'https://m.media-amazon.com/images/I/7100sGFH77L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71qYybRbVxL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61HZy-3MPZL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71E3TcdD5PL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/81eR7kfVZSL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71z9+QxGvtL._SL1500_.jpg',
     ],
     price: '$79',
     description: 'Portable, rechargeable pump with auto stop and LED display.',
@@ -435,9 +435,9 @@ const products = [
     category: 'Automobiles',
     name: 'Car Vacuum Cleaner',
     images: [
-      'https://m.media-amazon.com/images/I/61jBpZBzQ7L._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/71QL77+j6QL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61GPHLt2ThL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71pmwfKdhDL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71NW6B-UFJL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/71w5hhX+4PL._SL1500_.jpg',
     ],
     price: '$39',
     description: 'Powerful suction with multiple nozzles for a spotless interior.',
@@ -453,9 +453,9 @@ const products = [
     category: 'Automobiles',
     name: 'Bluetooth FM Transmitter',
     images: [
-      'https://m.media-amazon.com/images/I/61JH9xuA1uL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61Spz9MKJhL._SL1500_.jpg',
-      'https://m.media-amazon.com/images/I/61yVAE0gnIL._SL1500_.jpg',
+      'https://m.media-amazon.com/images/I/61WgfdZIhIS._SL1200_.jpg',
+      'https://m.media-amazon.com/images/I/71BE6q6AkLS._SL1200_.jpg',
+      'https://m.media-amazon.com/images/I/61cnnFc223S._SL1200_.jpg',
     ],
     price: '$29',
     description: 'Stream music and take calls hands-free with FM transmission.',
