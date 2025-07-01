@@ -18,7 +18,10 @@ const Orders = () => {
   };
 
   return (
-    <div className={`container py-5 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
+    <>
+    <br />
+    
+    <div className={`container py-5 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}> 
       <h2 className="fw-bold mb-4 text-gradient">📦 Your Orders</h2>
 
       {orders.length === 0 ? (
@@ -81,6 +84,7 @@ const Orders = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 
