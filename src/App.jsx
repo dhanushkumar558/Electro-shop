@@ -15,6 +15,7 @@ import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider, useTheme } from './themeContext';
 import { CartProvider } from './context/CartContext';
 import Footer from './components/Footer';
+import Orders from './components/Orders';
 
 function ThemedApp() {
   const { darkMode } = useTheme();
@@ -36,6 +37,8 @@ function ThemedApp() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/view-all/:category" element={<ViewAll />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/orders" element={<Orders />} />
+
         <Route path="/payment" element={<Payment />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>

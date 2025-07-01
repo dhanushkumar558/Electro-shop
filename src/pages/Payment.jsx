@@ -12,13 +12,21 @@ const Payment = () => {
 
   const total = cartItems.reduce((sum, item) => {
     const price = parseFloat(item.price.replace('$', ''));
-    return sum + price;
+    return sum + price * item.quantity;
   }, 0);
 
   const handlePayment = () => {
-    alert(`✅ Payment Successful via ${paymentMethod.toUpperCase()}!`);
+    const previousOrders = JSON.parse(localStorage.getItem('orders')) || [];
+    const newOrder = {
+      items: cartItems,
+      time: new Date().toLocaleString(),
+    };
+
+    localStorage.setItem('orders', JSON.stringify([...previousOrders, newOrder]));
     clearCart();
-    navigate('/');
+
+    alert(`✅ Payment Successful via ${paymentMethod.toUpperCase()}!`);
+    navigate('/orders');
   };
 
   if (cartItems.length === 0) {
@@ -68,8 +76,12 @@ const Payment = () => {
                   darkMode ? 'bg-dark text-white border-light' : ''
                 }`}
               >
-                <span>{item.name}</span>
-                <span className="fw-semibold">{item.price}</span>
+                <span>
+                  {item.name} <small className="text-muted">x{item.quantity}</small>
+                </span>
+                <span className="fw-semibold">
+                  ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
+                </span>
               </li>
             ))}
           </ul>
@@ -117,8 +129,8 @@ const Payment = () => {
 
       {/* Back */}
       <div className="text-center mt-4">
-        <Link to="/" className="btn btn-link text-decoration-none">
-          ⬅️ Back to Shop
+        <Link to="/cart" className="btn btn-link text-decoration-none">
+          ⬅️ Back to Cart
         </Link>
       </div>
 

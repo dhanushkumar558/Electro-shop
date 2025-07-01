@@ -90,6 +90,13 @@ function Navbar() {
                 </Badge>
               )}
             </Link>
+            <Link
+  to="/orders"
+  className={`nav-link ${location.pathname === '/orders' ? 'fw-semibold text-primary' : darkMode ? 'text-light' : ''}`}
+  onClick={handleCollapse}
+>
+  📦 Orders
+</Link>
           </Nav>
 
           <Nav>

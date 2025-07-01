@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../data/products';
 import SuggestedProducts from '../components/SuggestedProducts';
@@ -8,12 +8,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { addToCart } = useCart();
+  const { addToCart, cartItems } = useCart();  
   const { darkMode } = useTheme();
+
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const product = products.find((p) => p.id === id);
+
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => setSuccessMessage(''), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
 
   if (!product) {
     return (
@@ -31,13 +40,44 @@ const ProductDetail = () => {
     ? product.reviews
     : product.reviews.slice(0, 3);
 
+  const handleAddToCart = () => {
+    const alreadyInCart = cartItems.find(item => item.id === product.id);
+    if (alreadyInCart) {
+      setSuccessMessage('❗ Already in Cart!');
+    } else {
+      addToCart(product);
+      setSuccessMessage('✅ Added to Cart!');
+    }
+  };
+
   return (
     <motion.div
-      className={`container py-5 ${darkMode ? 'bg-dark text-light' : 'bg-white text-dark'}`}
+      className={`container py-5 position-relative ${darkMode ? 'bg-dark text-light' : 'bg-white text-dark'}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
+      {/* ✅ Toast Message */}
+      <AnimatePresence>
+        {successMessage && (
+          <motion.div
+            className="position-fixed top-0 start-50 translate-middle-x mt-3 px-4 py-2 fw-semibold rounded-pill shadow"
+            style={{
+              backgroundColor: darkMode ? '#222' : '#fff',
+              color: darkMode ? '#fff' : '#000',
+              zIndex: 1055,
+              border: '1px solid #ccc',
+            }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            {successMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="row align-items-center mb-5">
         {/* 📸 Image Section */}
         <motion.div
@@ -93,7 +133,7 @@ const ProductDetail = () => {
             className="btn btn-lg btn-success rounded-pill shadow-sm"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => addToCart(product)}
+            onClick={handleAddToCart}
           >
             🛒 Add to Cart
           </motion.button>
