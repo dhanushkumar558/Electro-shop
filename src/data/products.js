@@ -11,6 +11,7 @@ const products = [
     ],
     price: '$499',
     description: 'Experience stunning 4K visuals with HDR support, smart streaming, and voice control.',
+    
     rating: 4.5,
     reviews: [
       { name: "Ravi", time: "2 days ago", comment: "Amazing quality!" },

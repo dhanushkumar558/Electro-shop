@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import ProductSection from '../components/ProductSection';
 import SearchBar from '../components/SearchBar';
 import FilterSortBar from '../components/FilterSortBar';
@@ -37,13 +38,23 @@ function Home() {
   };
 
   return (
-    <main className={`container-fluid px-5 py-5 rounded shadow-sm ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
-      <header className="text-center mb-5">
+    <main
+      className={`container-fluid px-5 py-5 rounded shadow-sm ${
+        darkMode ? 'bg-dark text-light' : 'bg-light text-dark'
+      }`}
+    >
+      {/* ✨ Welcome Header Animation */}
+      <motion.header
+        className="text-center mb-5"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1 className="fw-bold display-4 text-gradient">⚡ Welcome to ElectroShop</h1>
         <p className="fs-5">
           Discover the latest gadgets and appliances curated just for you
         </p>
-      </header>
+      </motion.header>
 
       {/* 🔍 Search and Sort UI */}
       <div className="mb-4">
@@ -51,18 +62,20 @@ function Home() {
         <FilterSortBar sortOption={sortOption} onSortChange={setSortOption} />
       </div>
 
-      {/* 🛒 Product Sections by Category */}
-     {categories.map((category) => {
-  const filtered = filterAndSort(category);
-  return filtered.length > 0 ? (
-    <ProductSection
-      key={category}
-      title={category}
-      products={filtered}
-    />
-  ) : null; // Skip empty categories
-})}
-
+      {/* 🛒 Animated Product Sections */}
+      {categories.map((category, index) => {
+        const filtered = filterAndSort(category);
+        return filtered.length > 0 ? (
+          <motion.div
+            key={category}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 * index, duration: 0.5 }}
+          >
+            <ProductSection title={category} products={filtered} />
+          </motion.div>
+        ) : null;
+      })}
 
       <style>{`
         .text-gradient {

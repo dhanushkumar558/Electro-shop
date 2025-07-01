@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '../themeContext';
+import { motion } from 'framer-motion';
 
 const Payment = () => {
   const { cartItems, clearCart } = useCart();
@@ -22,28 +23,50 @@ const Payment = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="container py-5 text-center">
+      <motion.div
+        className="container py-5 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <h2 className="fw-bold text-danger mb-4">🛒 Cart is Empty</h2>
         <Link to="/" className="btn btn-primary rounded-pill shadow">
           ⬅️ Continue Shopping
         </Link>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className={`container py-5 ${darkMode ? 'bg-dark text-white' : ''}`}>
-      <h2 className="fw-bold text-gradient mb-4">💳 Payment</h2>
+    <motion.div
+      className={`container py-5 ${darkMode ? 'bg-dark text-white' : ''}`}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <motion.h2
+        className="fw-bold text-gradient mb-4"
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+      >
+        💳 Payment
+      </motion.h2>
 
       {/* Order Summary */}
-      <div className={`card shadow-sm rounded-4 mb-4 ${darkMode ? 'bg-secondary text-white' : ''}`}>
+      <motion.div
+        className={`card shadow-sm rounded-4 mb-4 ${darkMode ? 'bg-secondary text-white' : ''}`}
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2 }}
+      >
         <div className="card-body">
           <h5 className="card-title mb-3">🛍️ Order Summary</h5>
           <ul className="list-group list-group-flush">
             {cartItems.map((item) => (
               <li
                 key={item.id}
-                className={`list-group-item d-flex justify-content-between align-items-center ${darkMode ? 'bg-dark text-white border-light' : ''}`}
+                className={`list-group-item d-flex justify-content-between align-items-center ${
+                  darkMode ? 'bg-dark text-white border-light' : ''
+                }`}
               >
                 <span>{item.name}</span>
                 <span className="fw-semibold">{item.price}</span>
@@ -55,40 +78,42 @@ const Payment = () => {
             <strong className="text-success">${total.toFixed(2)}</strong>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Payment Methods */}
-      <div className="mb-4">
+      <motion.div
+        className="mb-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
         <h5 className="mb-3">🧾 Select Payment Method:</h5>
         <div className="btn-group w-100">
-          <button
-            className={`btn ${paymentMethod === 'paypal' ? 'btn-primary' : 'btn-outline-primary'}`}
-            onClick={() => setPaymentMethod('paypal')}
-          >
-            🅿 PayPal
-          </button>
-          <button
-            className={`btn ${paymentMethod === 'upi' ? 'btn-primary' : 'btn-outline-primary'}`}
-            onClick={() => setPaymentMethod('upi')}
-          >
-            🇮🇳 UPI
-          </button>
-          <button
-            className={`btn ${paymentMethod === 'stripe' ? 'btn-primary' : 'btn-outline-primary'}`}
-            onClick={() => setPaymentMethod('stripe')}
-          >
-            💳 Stripe
-          </button>
+          {['paypal', 'upi', 'stripe'].map((method) => (
+            <button
+              key={method}
+              className={`btn ${
+                paymentMethod === method ? 'btn-primary' : 'btn-outline-primary'
+              }`}
+              onClick={() => setPaymentMethod(method)}
+            >
+              {method === 'paypal' && '🅿 PayPal'}
+              {method === 'upi' && '🇮🇳 UPI'}
+              {method === 'stripe' && '💳 Stripe'}
+            </button>
+          ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Confirm Button */}
-      <button
+      <motion.button
         className="btn btn-lg btn-success rounded-pill shadow-sm w-100"
         onClick={handlePayment}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
       >
         ✅ Confirm & Pay with {paymentMethod.toUpperCase()}
-      </button>
+      </motion.button>
 
       {/* Back */}
       <div className="text-center mt-4">
@@ -104,7 +129,7 @@ const Payment = () => {
           -webkit-text-fill-color: transparent;
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 };
 

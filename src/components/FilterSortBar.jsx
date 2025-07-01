@@ -1,11 +1,17 @@
 import React from 'react';
 import { useTheme } from '../themeContext';
+import { motion } from 'framer-motion';
 
 const FilterSortBar = ({ sortOption, onSortChange }) => {
   const { darkMode } = useTheme();
 
   return (
-    <div className="mb-4 d-flex justify-content-center w-100">
+    <motion.div
+      className="mb-4 d-flex justify-content-center w-100"
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <select
         className={`form-select shadow-sm ${darkMode ? 'bg-dark text-light border-secondary' : ''}`}
         value={sortOption}
@@ -18,7 +24,7 @@ const FilterSortBar = ({ sortOption, onSortChange }) => {
         <option value="nameAsc">Name: A to Z</option>
         <option value="nameDesc">Name: Z to A</option>
       </select>
-    </div>
+    </motion.div>
   );
 };
 

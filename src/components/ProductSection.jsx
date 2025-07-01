@@ -2,13 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import { useTheme } from '../themeContext';
+import { motion } from 'framer-motion';
 
 function ProductSection({ title, products }) {
   const { darkMode } = useTheme();
   const sectionProducts = products.slice(0, 4);
 
   return (
-    <section className={`mb-5 p-3 rounded ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
+    <motion.section
+      className={`mb-5 p-3 rounded ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="fw-bold text-capitalize">{title}</h2>
         <Link
@@ -20,13 +26,19 @@ function ProductSection({ title, products }) {
       </div>
 
       <div className="row g-4">
-        {sectionProducts.map((product) => (
-          <div key={product.id} className="col-6 col-sm-6 col-lg-3">
+        {sectionProducts.map((product, index) => (
+          <motion.div
+            key={product.id}
+            className="col-6 col-sm-6 col-lg-3"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.4, ease: 'easeOut' }}
+          >
             <ProductCard product={product} />
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
