@@ -61,9 +61,10 @@ const Orders = () => {
                     >
                       🔎 {item.name} <span className="text-muted small">x{item.quantity}</span>
                     </Link>
-                    <span className="text-success fw-semibold">
-                      ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
-                    </span>
+                   <span className="text-success fw-semibold">
+  ${ (parseFloat(item.price?.toString().replace('$', '')) * item.quantity).toFixed(2) }
+</span>
+
                   </li>
                 ))}
               </ul>

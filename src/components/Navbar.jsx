@@ -50,7 +50,7 @@ function Navbar() {
       to="/signup"
       className={`nav-item nav-link px-3 py-2 rounded ${
         location.pathname === '/signup'
-          ? 'fw-semibold text-primary bg-light'
+          ? 'fw-bold text-primary bg-light'
           : darkMode ? 'text-light' : 'text-dark'
       }`}
       onClick={handleCollapse}
@@ -63,7 +63,7 @@ function Navbar() {
       to="/login"
       className={`nav-item nav-link px-3 py-2 rounded ${
         location.pathname === '/login'
-          ? 'fw-semibold text-primary bg-light'
+          ? 'fw-bold text-primary bg-light'
           : darkMode ? 'text-light' : 'text-dark'
       }`}
       onClick={handleCollapse}
@@ -76,7 +76,7 @@ function Navbar() {
       to="/cart"
       className={`nav-item nav-link px-3 py-2 rounded position-relative ${
         location.pathname === '/cart'
-          ? 'fw-semibold text-primary bg-light'
+          ? 'fw-bold text-primary bg-light'
           : darkMode ? 'text-light' : 'text-dark'
       }`}
       onClick={handleCollapse}
@@ -98,7 +98,7 @@ function Navbar() {
       to="/orders"
       className={`nav-item nav-link px-3 py-2 rounded ${
         location.pathname === '/orders'
-          ? 'fw-semibold text-primary bg-light'
+          ? 'fw-bold text-primary bg-light'
           : darkMode ? 'text-light' : 'text-dark'
       }`}
       onClick={handleCollapse}
@@ -111,7 +111,7 @@ function Navbar() {
       to="/wishlist"
       className={`nav-item nav-link px-3 py-2 rounded ${
         location.pathname === '/wishlist'
-          ? 'fw-semibold text-primary bg-light'
+          ? 'fw-bold text-primary bg-light'
           : darkMode ? 'text-light' : 'text-dark'
       }`}
       onClick={handleCollapse}
@@ -121,7 +121,7 @@ function Navbar() {
   </Nav>
 
   {/* Settings Dropdown */}
-  <Nav className="ms-auto">
+  <Nav className="ms-auto fw-bold">
     <NavDropdown
       title="⚙ Settings"
       align="end"

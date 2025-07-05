@@ -60,7 +60,7 @@ const products = [
   {
     id: 'home-3',
     category: 'Home Electronics',
-    name: ' Hepa filter Air Purifier',
+    name: 'Hepa filter Air Purifier',
     images: [
       'https://m.media-amazon.com/images/I/71ipnrfS-1L._SL1500_.jpg',
       'https://m.media-amazon.com/images/I/81XVz57qC+L._SL1500_.jpg',

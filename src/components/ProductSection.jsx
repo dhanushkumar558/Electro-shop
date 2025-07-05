@@ -15,29 +15,52 @@ function ProductSection({ title, products }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2 className="fw-bold text-capitalize">{title}</h2>
-        <Link
-          to={`/view-all/${title}`}
-          className="btn btn-outline-primary rounded-pill fw-semibold shadow-sm"
-        >
-          🔎 View All
-        </Link>
-      </div>
+
+   <div className="row align-items-center mb-4">
+  {/* Title column */}
+  <div className="col-8 col-sm text-start text-sm-center">
+    <h2 className="fw-bold text-capitalize mb-0">{title}</h2>
+  </div>
+
+  {/* Mobile: Small button, only shown below 576px */}
+  <div className="col-4 col-sm-auto text-end d-sm-none">
+    <Link
+      to={`/view-all/${title}`}
+      className="btn btn-outline-primary btn-sm rounded-pill fw-semibold shadow-sm"
+    >
+      🔎All
+    </Link>
+  </div>
+
+  {/* Tablet/Desktop: Normal button, hidden on mobile */}
+  <div className="col-sm-auto text-end d-none d-sm-block">
+    <Link
+      to={`/view-all/${title}`}
+      className="btn btn-outline-primary rounded-pill fw-semibold shadow-sm"
+    >
+     🔎All
+    </Link>
+  </div>
+</div>
+
+
+
+
 
       <div className="row g-4">
-        {sectionProducts.map((product, index) => (
-          <motion.div
-            key={product.id}
-            className="col-6 col-sm-6 col-lg-3"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.4, ease: 'easeOut' }}
-          >
-            <ProductCard product={product} />
-          </motion.div>
-        ))}
-      </div>
+  {sectionProducts.map((product, index) => (
+    <motion.div
+      key={product.id}
+      className="col-12 col-sm-6 col-lg-3"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.4, ease: 'easeOut' }}
+    >
+      <ProductCard product={product} />
+    </motion.div>
+  ))}
+</div>
+
     </motion.section>
   );
 }

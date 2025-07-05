@@ -19,7 +19,7 @@ const Cart = () => {
         <h2 className="fw-bold mb-4 text-gradient text-center">🛍️ Your Cart</h2>
 
         {cartItems.length === 0 ? (
-          <div className="text-center">
+          <div className="text-center"> 
             <h3 className="fw-bold mb-3">Your cart is empty</h3>
             <p className="text-muted">Looks like you haven’t added anything yet.</p>
             <Link to="/" className="btn btn-primary btn-lg mt-3 rounded-pill shadow-sm">
@@ -38,12 +38,17 @@ const Cart = () => {
                     }`}
                     style={{ width: '100%', maxWidth: '250px' }}
                   >
-                    <img
-                      src={item.images?.[0] || item.image}
-                      className="card-img-top rounded-top-4"
-                      alt={item.name}
-                      style={{ height: '180px', objectFit: 'cover' }}
-                    />
+                   <img
+  src={item.images?.[0] || item.image}
+  className="card-img-top rounded-top-4"
+  alt={item.name}
+  style={{
+    height: '180px',
+    width: '100%',
+    objectFit: 'cover', // crops and fills without distortion
+  }}
+/>
+
                     <div className="card-body d-flex flex-column text-center">
                       <h5 className="card-title fw-semibold">{item.name}</h5>
                       <p className="text-success fw-bold mb-2">{item.price}</p>

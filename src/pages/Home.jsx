@@ -43,26 +43,46 @@ function Home() {
         darkMode ? 'bg-dark text-light' : 'bg-light text-dark'
       }`}
     >
-      {/* ✨ Welcome Header Animation */}
+      {/* ✨ Welcome Header */}
       <motion.header
         className="text-center mb-5"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="fw-bold display-4 text-gradient">⚡ Welcome to ElectroShop</h1>
-        <p className="fs-5">
+    <h1 className="fw-bold display-4 text-gradient ambient-glow">
+  ⚡ Welcome to ElectroShop
+</h1>
+
+<style>{`
+  .text-gradient {
+    background: linear-gradient(90deg, #0d6efd, #00c6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .ambient-glow {
+    text-shadow:
+      0px 3px 5px rgba(0, 198, 255, 0.2),
+      0px 1px 1px rgba(255, 255, 255, 0.1);
+  }
+`}</style>
+
+
+
+
+        <p className="fs-5 fw-semibold">
           Discover the latest gadgets and appliances curated just for you
         </p>
       </motion.header>
 
-      {/* 🔍 Search and Sort UI */}
+      {/* 🔍 Search & Sort */}
       <div className="mb-4">
         <SearchBar searchTerm={searchTerm} onSearch={setSearchTerm} />
         <FilterSortBar sortOption={sortOption} onSortChange={setSortOption} />
       </div>
 
-      {/* 🛒 Animated Product Sections */}
+      {/* 🛍️ Product Sections */}
       {categories.map((category, index) => {
         const filtered = filterAndSort(category);
         return filtered.length > 0 ? (
@@ -71,7 +91,9 @@ function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index, duration: 0.5 }}
+            className="mb-5"
           >
+            {/* Only render the ProductSection — it already includes the title */}
             <ProductSection title={category} products={filtered} />
           </motion.div>
         ) : null;

@@ -30,7 +30,7 @@ const ViewAll = () => {
     <main className="container py-5">
       <div className="text-center mb-5">
         <h2 className="fw-bold display-6 text-capitalize">
-          🔍 All Products in {category}
+          ⚡ All Products in {category}
         </h2>
         <p className="text-muted fs-5">
           Browse our collection of high-quality {category.toLowerCase()}
