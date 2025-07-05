@@ -118,21 +118,23 @@ const ProductDetail = () => {
       {/* ✅ Toast */}
       <AnimatePresence>
         {successMessage && (
-          <motion.div
-            className="position-fixed top-0 start-50 translate-middle-x mt-3 px-4 py-2 fw-semibold rounded-pill shadow"
-            style={{
-              backgroundColor: darkMode ? '#222' : '#fff',
-              color: darkMode ? '#fff' : '#000',
-              zIndex: 1055,
-              border: '1px solid #ccc',
-            }}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
-          >
-            {successMessage}
-          </motion.div>
+         <motion.div
+  className="position-fixed start-50 translate-middle-x px-4 py-2 fw-semibold rounded-pill shadow"
+  style={{
+    bottom: '40px', // ⬅️ Lifts it up slightly
+    backgroundColor: darkMode ? '#222' : '#fff',
+    color: darkMode ? '#fff' : '#000',
+    zIndex: 1055,
+    border: '1px solid #ccc',
+  }}
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -20 }}
+  transition={{ duration: 0.4 }}
+>
+  {successMessage}
+</motion.div>
+
         )}
       </AnimatePresence>
 
