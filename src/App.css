@@ -6,3 +6,16 @@ main {
 html, body, #root {
   height: 100%;
 }
+/* Place this in your CSS or inside <style> in the component */
+/* Add inside your global CSS file or inside <style> tag in component */
+@media (max-width: 768px) {
+  .heading-responsive {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading-responsive {
+    font-size: 1.6rem !important;
+  }
+}

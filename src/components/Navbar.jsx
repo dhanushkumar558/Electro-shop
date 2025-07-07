@@ -37,7 +37,7 @@ function Navbar() {
   className={`navbar-brand fw-bold fs-4 text-gradient ${darkMode ? 'text-white' : ''}`}
   onClick={handleCollapse}
 >
-  ⚡ ElectroShop
+ 🍦 Sweet-Bite
 </a>
 
 

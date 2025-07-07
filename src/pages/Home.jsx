@@ -8,11 +8,11 @@ import { useSearch } from '../context/SearchContext';
 import { useTheme } from '../themeContext';
 
 const categories = [
-  'Home Electronics',
-  'Kitchen Electronics',
-  'Gardening',
-  'Personal Care',
-  'Automobiles',
+  'Cakes',
+  'Pastries',
+  'Breads',
+  'Cookies',
+  'Special Occasion',
 ];
 
 function Home() {
@@ -36,6 +36,7 @@ function Home() {
         return 0;
       });
   };
+  
 
   return (
     <main
@@ -50,9 +51,33 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-    <h1 className="fw-bold display-4 text-gradient ambient-glow">
-  ⚡ Welcome to ElectroShop
+ <h1 className="fw-bold text-center d-flex justify-content-center align-items-center gap-3 flex-wrap">
+  <motion.span
+    initial={{ y: 0 }}
+    animate={{ y: [-4, 0, -4] }}
+    transition={{ repeat: Infinity, duration: 1 }}
+    style={{ fontSize: '5rem' }}
+  >
+    🎂
+  </motion.span>
+
+ <span className="rainbow-text  heading-responsive">
+  Welcome to Sweet-Bite
+</span>
+
+
+  <motion.span
+    initial={{ y: 0 }}
+    animate={{ y: [-4, 0, -4] }}
+    transition={{ repeat: Infinity, duration: 1 }}
+    style={{ fontSize: '5rem' }}
+  >
+    🍦
+  </motion.span>
 </h1>
+
+
+
 
 <style>{`
   .text-gradient {
@@ -71,9 +96,10 @@ function Home() {
 
 
 
-        <p className="fs-5 fw-semibold">
-          Discover the latest gadgets and appliances curated just for you
-        </p>
+      <p className="fs-5 fw-semibold text-gradient soft-pulse">
+  Discover our delicious cakes and pastries baked fresh just for you
+</p>
+
       </motion.header>
 
       {/* 🔍 Search & Sort */}

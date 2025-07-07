@@ -66,3 +66,51 @@ main {
 html, body, #root {
   height: 100%;
 }
+.rainbow-text {
+  background: linear-gradient(
+    270deg,
+    #ff4ecd,
+    #4f5bd5,
+    #00c6ff,
+    #0fd850,
+    #f9cb28,
+    #ff4ecd
+  );
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShift 2s ease infinite;
+}
+
+@keyframes rainbowShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive size for heading */
+@media (max-width: 768px) {
+  .heading-responsive {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading-responsive {
+    font-size: 1.6rem !important;
+  }
+}
+.soft-pulse {
+  animation: softPulse 1s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.015);
+    opacity: 0.95;
+  }
+}
