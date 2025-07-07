@@ -18,7 +18,7 @@ function ProductSection({ title, products }) {
 
    <div className="row align-items-center mb-4">
   {/* Title column */}
-  <div className="col-8 col-sm text-start text-sm-center">
+  <div className="col-8 col-sm text-start text-sm-center text-gradient">
     <h2 className="fw-bold text-capitalize mb-0">{title}</h2>
   </div>
 

@@ -2,6 +2,7 @@
 
 body {
   transition: background-color 0.3s, color 0.3s;
+  
 }
 
 body.dark-mode {
@@ -101,7 +102,7 @@ html, body, #root {
   }
 }
 .soft-pulse {
-  animation: softPulse 1s ease-in-out infinite;
+  animation: softPulse 0.8s ease-in-out infinite;
 }
 
 @keyframes softPulse {
@@ -111,6 +112,6 @@ html, body, #root {
   }
   50% {
     transform: scale(1.015);
-    opacity: 0.95;
+    opacity: 1;
   }
 }
