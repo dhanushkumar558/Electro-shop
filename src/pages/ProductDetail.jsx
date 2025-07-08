@@ -174,16 +174,24 @@ const ProductDetail = () => {
 
           <AnimatePresence mode="wait">
             <motion.img
-              key={selectedImage}
-              src={product.images[selectedImage]}
-              alt={product.name}
-              className="img-fluid rounded-4 shadow-sm mb-3"
-              style={{ maxHeight: '450px', objectFit: 'cover', width: '100%' }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            />
+  key={selectedImage}
+  src={product.images[selectedImage]}
+  alt={product.name}
+  className="rounded-4 shadow-sm mb-3"
+  style={{
+    width: '100%',
+    maxWidth: '450px',
+    height: '450px',
+    objectFit: 'cover',
+   
+    display: 'block',
+  }}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.3 }}
+/>
+
           </AnimatePresence>
 
           <div className="d-flex flex-wrap gap-2 justify-content-start">
