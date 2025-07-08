@@ -6,6 +6,7 @@ import FilterSortBar from '../components/FilterSortBar';
 import products from '../data/products';
 import { useSearch } from '../context/SearchContext';
 import { useTheme } from '../themeContext';
+import PartyOrderPromo from '../components/PartyOrderPromo';
 
 const categories = [
   'Cakes',
@@ -39,7 +40,9 @@ function Home() {
   
 
   return (
+  
     <main
+    
       className={`container-fluid px-5 py-5 rounded shadow-sm ${
         darkMode ? 'bg-dark text-light' : 'bg-light text-dark'
       }`}
@@ -66,6 +69,7 @@ function Home() {
 </span>
 
 
+
   <motion.span
     initial={{ y: 0 }}
     animate={{ y: [-4, 0, -4] }}
@@ -76,7 +80,7 @@ function Home() {
   </motion.span>
 </h1>
 
-
+  <PartyOrderPromo />
 
 
 <style>{`
